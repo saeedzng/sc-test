@@ -5,6 +5,7 @@ import { useTonConnect } from "./hooks/useTonConnect";
 import { fromNano } from "@ton/core";
 import WebApp from '@twa-dev/sdk';
 
+
 function App() {
   const {
     contract_address,
@@ -13,11 +14,13 @@ function App() {
     sendIncrement ,
     sendDeposit,
     sendWithdrawalRequest,
+    
   } = useMainContract();
 
   const { connected } = useTonConnect()
   const showmessagetouser= () => {
-    WebApp.showAlert('Hey there!');
+    let saythelink = sendIncrement;
+    WebApp.showAlert(saythelink.toString());
   }
   return (
     <div>
@@ -37,7 +40,7 @@ function App() {
         <a onClick={() => {
             showmessagetouser()
           }
-        }>show message</a>
+        }>show message link</a>
         <div className='Card'>
           <b>Counter Value</b>
           <div>{counter_value?? "Loading..."}</div>
@@ -46,6 +49,7 @@ function App() {
               <a
                 onClick={() => {
                   sendIncrement();
+                  
                 }}
               >
                 Increment

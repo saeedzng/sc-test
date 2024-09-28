@@ -8,7 +8,7 @@ import { useTonConnect } from "./useTonConnect";
 
 export function useMainContract() {
   const client = useTonClient();
-
+ 
   const { sender } = useTonConnect();
     
     const sleep = (time: number) => new Promise((resolve) => setTimeout(resolve, time)); 
@@ -53,7 +53,8 @@ export function useMainContract() {
     ...contractData,
     sendIncrement: () => {
       return mainContract?.sendIncrement(sender, toNano(0.05), 5);
-    },
+       
+    }, 
     sendDeposit: async () =>{
       return mainContract?.sendDeposit(sender , toNano("1"));
     },
