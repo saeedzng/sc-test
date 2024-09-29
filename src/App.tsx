@@ -19,8 +19,8 @@ function App() {
 
   const { connected } = useTonConnect()
   const showmessagetouser= () => {
-    let saythelink = sendIncrement;
-    WebApp.showAlert(saythelink.toString());
+   
+    WebApp.showAlert("hi");
   }
   return (
     <div>
