@@ -60,6 +60,9 @@ export function useMainContract() {
     },
     sendWithdrawalRequest : async () => {
       return mainContract?.sendWithdrawalRequest(sender , toNano(0.05),toNano(0.7));
+    },
+    sendOrderToBuyChicken: async () =>{
+      return mainContract?.sendOrderToBuyChicken(sender , toNano("1"));
     }
   };
 }

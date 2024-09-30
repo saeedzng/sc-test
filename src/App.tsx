@@ -14,7 +14,7 @@ function App() {
     sendIncrement ,
     sendDeposit,
     sendWithdrawalRequest,
-    
+    sendOrderToBuyChicken,
   } = useMainContract();
 
   const { connected } = useTonConnect()
@@ -41,6 +41,10 @@ function App() {
             showmessagetouser()
           }
         }>show message link</a>
+        <a onClick={() => {
+            sendOrderToBuyChicken()
+          }
+        }>buy one chicken</a>
         <div className='Card'>
           <b>Counter Value</b>
           <div>{counter_value?? "Loading..."}</div>
